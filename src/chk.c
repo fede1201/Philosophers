@@ -6,7 +6,7 @@
 /*   By: fluzi <fluzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 16:50:03 by fluzi             #+#    #+#             */
-/*   Updated: 2024/10/29 16:50:44 by fluzi            ###   ########.fr       */
+/*   Updated: 2024/10/29 17:02:14 by fluzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ static bool chk_numbers(char **av)
 bool chk_parameter(int ac, char **av) 
 {
     if (ac != 6 && ac != 7)
-        return (printf("2\n"), false);
+        return (printf("Error\n./philo [n_philosophers][t_die][t_eat][t_sleep]"),false);
     if (!chk_numbers(av))
-        return (printf("1\n"), false);
+        return (printf("Error\n Invalid parameters"), false);
     return true;
 }

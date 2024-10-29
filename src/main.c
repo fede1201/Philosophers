@@ -6,15 +6,16 @@
 /*   By: fluzi <fluzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 14:24:07 by fluzi             #+#    #+#             */
-/*   Updated: 2024/10/29 16:51:10 by fluzi            ###   ########.fr       */
+/*   Updated: 2024/10/29 17:01:58 by fluzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../include/philo.h"
+
 int main(int ac, char **av) 
 {
-    if (!chk_parameter(ac, av)) {
+    if (!chk_parameter(ac, av))
         return 1;
-    }
     return 0;
 }
 

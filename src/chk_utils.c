@@ -6,7 +6,7 @@
 /*   By: fluzi <fluzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 16:38:48 by fluzi             #+#    #+#             */
-/*   Updated: 2024/10/29 16:47:57 by fluzi            ###   ########.fr       */
+/*   Updated: 2024/10/29 16:57:18 by fluzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ bool    ft_atoi_ck(const char *str)
 		str++;
 	}
 	ret = result * sign;
-	if (ret > 2147483647 || ret < -2147483648)
+	if (ret > 2147483647 || ret < -2147483648 || ret <= 0)
 		return (false);
 	return (true);
 }
