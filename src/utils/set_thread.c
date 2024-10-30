@@ -1,44 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   set_thread.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fluzi <fluzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/30 13:51:04 by fluzi             #+#    #+#             */
-/*   Updated: 2024/10/30 16:45:32 by fluzi            ###   ########.fr       */
+/*   Created: 2024/10/30 17:21:33 by fluzi             #+#    #+#             */
+/*   Updated: 2024/10/30 17:28:43 by fluzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/philo.h"
 
-size_t   time()
+void	begin_philosophers_routine(t_first *parameters)
 {
-    struct timeval tv;
-    
-    gettimeofday(&tv, NULL);
-    return ((tv.tv_sec * 1000) + (tv.tv_usec / 1000));
-}
+	int	i;
 
-int	ft_atoi(const char *str)
-{
-	int	result;
-	int	sign;
-
-	result = 0;
-	sign = 1;
-	while (*str == 32 || (*str >= 9 && *str <= 13))
-		str++;
-	if (*str == '-' || *str == '+')
+	i = 0;
+	while (parameters->philo[i].id)
 	{
-		if (*str == '-')
-			sign *= -1;
-		str++;
+		pthread_create(&parameters->philo[i].thread_id, NULL, &philo_routine, (void *) &parameters->philo[i]);
+		i++;
 	}
-	while (*str >= '0' && *str <= '9')
+	i = 0;
+	while (parameters->philo[i].id)
 	{
-		result = result * 10 + *str - '0';
-		str++;
+		pthread_join(parameters->philo[i].thread_id, NULL);
+		i++;
 	}
-	return (result * sign);
 }

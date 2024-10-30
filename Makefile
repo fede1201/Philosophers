@@ -4,8 +4,9 @@ CC = gcc
 
 FLAGS = -Wall -Wextra -Werror
 
-SOURCES = ./src/*.c \
+SOURCES = 	./src/*.c \
 			./src/chk/*.c \
+			./src/utils/*.c \
 		
 
 all:

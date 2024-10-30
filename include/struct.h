@@ -6,11 +6,13 @@
 /*   By: fluzi <fluzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 14:13:26 by fluzi             #+#    #+#             */
-/*   Updated: 2024/10/30 16:12:55 by fluzi            ###   ########.fr       */
+/*   Updated: 2024/10/30 17:24:22 by fluzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
+
+typedef struct s_first t_first;
 
 typedef struct s_philo
 {

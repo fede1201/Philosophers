@@ -6,7 +6,7 @@
 /*   By: fluzi <fluzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/30 14:54:22 by fluzi             #+#    #+#             */
-/*   Updated: 2024/10/30 16:37:22 by fluzi            ###   ########.fr       */
+/*   Updated: 2024/10/30 17:31:42 by fluzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static pthread_mutex_t  *safe_malloc_fork(int number)
 	
 	ret = (pthread_mutex_t *) malloc(sizeof(pthread_mutex_t) * (number + 1));
 	if (!ret)
-		return NULL;
+		return (NULL);
 	ret[number] = (pthread_mutex_t) {0};
 	return (ret);
 }
@@ -36,7 +36,7 @@ static t_philo  *safe_malloc_philo(int number)
 	
 	ret = (t_philo *) malloc(sizeof(t_philo) * (number + 1));
 	if (!ret)
-		return NULL;
+		return (NULL);
 	ret[number] = (t_philo){0}; 
 	return (ret);
 }
