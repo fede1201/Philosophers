@@ -5,31 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fluzi <fluzi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/29 16:38:48 by fluzi             #+#    #+#             */
-/*   Updated: 2024/10/29 16:57:18 by fluzi            ###   ########.fr       */
+/*   Created: 2024/10/30 13:51:04 by fluzi             #+#    #+#             */
+/*   Updated: 2024/10/30 16:19:47 by fluzi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/philo.h"
+#include "../../include/philo.h"
 
-static int ft_strlen(const char *str)
+size_t   time()
 {
-    int i;
-
-    i = 0;
-    while (str[i])
-        i++;
-    return (i);
+    struct timeval tv;
+    
+    gettimeofday(&tv, NULL);
+    return ((tv.tv_sec * 1000) + (tv.tv_usec / 1000));
 }
 
-bool    ft_atoi_ck(const char *str)
+int	ft_atoi(const char *str)
 {
-	long	result;
-	int		sign;
-	long	ret;
+	int	result;
+	int	sign;
 
-	if (ft_strlen(str) > 62)
-		return (false);
 	result = 0;
 	sign = 1;
 	while (*str == 32 || (*str >= 9 && *str <= 13))
@@ -45,8 +40,5 @@ bool    ft_atoi_ck(const char *str)
 		result = result * 10 + *str - '0';
 		str++;
 	}
-	ret = result * sign;
-	if (ret > 2147483647 || ret < -2147483648 || ret <= 0)
-		return (false);
-	return (true);
+	return (result * sign);
 }

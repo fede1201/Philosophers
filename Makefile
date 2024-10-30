@@ -5,6 +5,8 @@ CC = gcc
 FLAGS = -Wall -Wextra -Werror
 
 SOURCES = ./src/*.c \
+			./src/chk/*.c \
+		
 
 all:
 	$(CC) $(FLAGS) $(SOURCES) -o $(NAME)
